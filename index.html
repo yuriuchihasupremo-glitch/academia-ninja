@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Ninja - Aprenda Jutsus de Naruto</title>
+    <style>
+        :root {
+            --bg-principal: #12121a;
+            --bg-card: #1c1c27;
+            --laranja-naruto: #ff6a00;
+            --texto-claro: #ffffff;
+            --texto-escuro: #8b8b9e;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-claro);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 30px 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--laranja-naruto);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0px 4px 10px rgba(255, 106, 0, 0.3);
+        }
+
+        .subtitulo {
+            color: var(--texto-escuro);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .seletor-area {
+            margin-bottom: 30px;
+        }
+
+        select {
+            background-color: var(--bg-card);
+            color: var(--texto-claro);
+            border: 2px solid var(--laranja-naruto);
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            outline: none;
+            width: 100%;
+            max-width: 400px;
+            transition: all 0.3s ease;
+        }
+
+        select:hover {
+            box-shadow: 0px 0px 15px rgba(255, 106, 0, 0.4);
+        }
+
+        .painel-treino {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 20px;
+            width: 340px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            border: 1px solid #2d2d3f;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--laranja-naruto);
+            font-size: 1.3rem;
+            border-bottom: 2px solid #2d2d3f;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .wrapper-img {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #14141f;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #252535;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: none;
+        }
+
+        .placeholder-text {
+            color: #4e4e66;
+            font-size: 1rem;
+            padding: 20px;
+        }
+
+        .instrucoes-box {
+            background-color: var(--bg-card);
+            border-left: 5px solid var(--laranja-naruto);
+            padding: 20px;
+            border-radius: 4px 12px 12px 4px;
+            max-width: 710px;
+            margin: 0 auto 30px auto;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .instrucoes-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff8c00, #ff5500);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255, 85, 0, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 85, 0, 0.6);
+        }
+
+        button:disabled {
+            background: #3a3a4a;
+            color: #6a6a7a;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: var(--texto-escuro);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pergaminho Ninja Digital</h1>
+        <div class="subtitulo">Treine jutsus reais usando o poder do Linux Mint!</div>
+
+        <div class="seletor-area">
+            <!-- Mudança aqui: Adicionado onclick e oninput para o Firefox registrar a escolha de qualquer jeito -->
+            <select id="selectJutsu" onchange="iniciarJutsu()" onclick="iniciarJutsu()" oninput="iniciarJutsu()">
+                <option value="">-- Escolha um Jutsu para Treinar --</option>
+                <option value="bolaFogo">Katon: Goukakyuu no Jutsu (Bola de Fogo)</option>
+                <option value="dragaoAgua">Suiryudan no Jutsu (Dragão d'Água)</option>
+                <option value="clones">Kage Bunshin no Jutsu (Clones das Sombras)</option>
+                <option value="rasengan">Rasengan & Controle de Chakra</option>
+            </select>
+        </div>
+
+        <div class="painel-treino">
+            <div class="card">
+                <h3>Selo de Mão Atual</h3>
+                <div class="wrapper-img">
+                    <div id="placeSelo" class="placeholder-text">Selecione um jutsu para abrir o pergaminho de selos</div>
+                    <img id="imgSelo" src="" alt="Selo de Mão">
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Demonstração do Jutsu</h3>
+                <div class="wrapper-img">
+                    <div id="placeEfeito" class="placeholder-text">Aguardando liberação de chakra...</div>
+                    <img id="imgEfeito" src="" alt="Efeito do Jutsu">
+                </div>
+            </div>
+        </div>
+
+        <div class="instrucoes-box">
+            <p id="txtInstrucao">Selecione uma técnica no menu acima para abrir o seu pergaminho digital.</p>
+        </div>
+
+        <button id="btnAvancar" onclick="proximoPasso()" disabled>Iniciar Treino ▶</button>
+    </div>
+
+    <footer>
+        Desenvolvido por um Ninja do Linux Mint 21.3 XFCE 🍃
+    </footer>
+
+    <script>
+        const JUTSUS = {
+            bolaFogo: {
+                sequencia: ["https://postimg.cc", "https://postimg.cc"],
+                nomesSelos: ["Javali", "Tigre"],
+                efeito: "https://postimg.cc",
+                descricao: "Jutsu Estilo Fogo! Molde o chakra de fogo no peito e faça a sequência Javali ➡️ Tigre antes de soprar!"
+            },
+            dragaoAgua: {
+                sequencia: ["https://postimg.cc", "https://postimg.cc", "https://postimg.cc", "https://postimg.cc", "https://postimg.cc"],
+                nomesSelos: ["Boi", "Macaco", "Rato", "Javali", "Tigre"],
+                efeito: "https://postimg.cc",
+                descricao: "Jutsu Dragão d'Água! Uma sequência complexa usando os selos que você possui para moldar a água ao redor."
+            },
+            clones: {
+                sequencia: ["https://postimg.cc"],
+                nomesSelos: ["Selo de Concentração"],
+                efeito: "https://postimg.cc",
+                descricao: "Kage Bunshin no Jutsu! Concentre sua energia para criar clones físicos idênticos dividindo seu chakra."
+            },
+            rasengan: {
+                sequencia: ["https://postimg.cc", "https://postimg.cc"],
+                nomesSelos: ["Concentração de Rotação", "Estabilização"],
+                efeito: "https://postimg.cc",
+                descricao: "Treino de Controle de Chakra Avançado! Rotacione o chakra na palma da mão com máxima velocidade e compressão física."
+            }
+        };
+
+        let jutsuAtual = null;
+        let passoAtual = 0;
+
+        const select = document.getElementById("selectJutsu");
+        const imgSelo = document.getElementById("imgSelo");
+        const imgEfeito = document.getElementById("imgEfeito");
+        const placeSelo = document.getElementById("placeSelo");
+        const placeEfeito = document.getElementById("placeEfeito");
+        const txtInstrucao = document.getElementById("txtInstrucao");
+        const btnAvancar = document.getElementById("btnAvancar");
+
+        function iniciarJutsu() {
+            const idJutsu = select.value;
+            if (!idJutsu) { resetarPainel(); return; }
+
+            jutsuAtual = JUTSUS[idJutsu];
+            passoAtual = 0;
+
+            imgEfeito.src = jutsuAtual.efeito;
+            imgEfeito.style.display = "block";
+            placeEfeito.style.display = "none";
+
+            imgSelo.style.display = "none";
+            placeSelo.style.display = "block";
+            placeSelo.innerText = "Clique no botão abaixo para ver o primeiro selo!";
+
+            txtInstrucao.innerText = jutsuAtual.descricao;
+            
+            // Força o destravamento total do botão tirando o bloqueio visual do Firefox
+            btnAvancar.removeAttribute("disabled");
+            btnAvancar.disabled = false;
+            btnAvancar.innerText = "Iniciar Sequência ▶";
+        }
+
+Use o código com cuidado.function proximoPasso() {if (!jutsuAtual) return;if (passoAtual < jutsuAtual.sequencia.length) {imgSelo.src = jutsuAtual.sequencia[passoAtual];imgSelo.style.display = "block";placeSelo.style.display = "none";const nomeSelo = jutsuAtual.nomesSelos[passoAtual];txtInstrucao.innerHTML = <strong>PASSO ${passoAtual + 1}:</strong> Faça o selo <strong>${nomeSelo.toUpperCase()}</strong> com as mãos!;passoAtual++;if (passoAtual === jutsuAtual.sequencia.length) {btnAvancar.innerText = "🔥 Finalizar Técnica 🔥";} else {btnAvancar.innerText = "Próximo Selo ▶";}} else {alert("✨ JUTSU CONCLUÍDO COM SUCESSO! CHAKRA LIBERADO PERFEITAMENTE! ✨");resetarPainel();}}function resetarPainel() {jutsuAtual = null;passoAtual = 0;select.value = "";imgSelo.style.display = "none";imgEfeito.style.display = "none";placeSelo.style.display = "block";placeEfeito.style.display = "block";placeSelo.innerText = "Selecione um jutsu para abrir o pergaminho de selos";placeEfeito.innerText = "Aguardando liberação de chakra...";txtInstrucao.innerText = "Selecione uma técnica no menu acima para abrir o seu pergaminho digital.";btnAvancar.disabled = true;btnAvancar.setAttribute("disabled", "true");btnAvancar.innerText = "Iniciar Treino ▶";}
