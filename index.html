@@ -31,6 +31,7 @@
             <option value="clones">Kage Bunshin: Clones das Sombras</option>
             <option value="transformacao">Henge no Jutsu (Transformação)</option>
             <option value="edotensei">Edo Tensei</option>
+            <option value="chakra">Recarregar Chakra</option>
         </select>
 
         <div class="grid">
@@ -58,7 +59,6 @@
     </div>
 
     <script>
-        // CONFIGURAÇÃO COM OS NOMES EXATOS DA SUA PASTA (bode.png, coelho.png, etc.)
         const JUTSUS = {
             fogo: {
                 fotos: ["cobra.png", "bode.png", "macaco.png", "javali.png", "cavalo.png", "tigre.png"],
@@ -69,15 +69,15 @@
             agua: {
                 fotos: [
                     "boi.png", "macaco.png", "coelho.png", "rato.png", "javali.png", "passaro.png", "boi.png", "cavalo.png", "passaro.png", "rato.png", 
-                    "tigre.png", "cachorro.png", "tigre.png", "serpente.png", "boi.png", "bode.png", "serpente.png", "javali.png", "bode.png", "rato.png", 
-                    "macaco.png", "passaro.png", "dragao.png", "passaro.png", "boi.png", "cavalo.png", "bode.png", "tigre.png", "serpente.png", "rato.png", 
+                    "tigre.png", "cachorro.png", "tigre.png", "cobra.png", "boi.png", "bode.png", "cobra.png", "javali.png", "bode.png", "rato.png", 
+                    "macaco.png", "passaro.png", "dragao.png", "passaro.png", "boi.png", "cavalo.png", "bode.png", "tigre.png", "cobra.png", "rato.png", 
                     "macaco.png", "coelho.png", "javali.png", "dragao.png", "bode.png", "rato.png", "boi.png", "macaco.png", "passaro.png", "rato.png", 
                     "bode.png", "passaro.png"
                 ],
                 nomes: [
                     "Boi", "Macaco", "Coelho", "Rato", "Javali", "Pássaro", "Boi", "Cavalo", "Pássaro", "Rato", 
-                    "Tigre", "Cão", "Tigre", "Serpente", "Boi", "Bode", "Serpente", "Javali", "Bode", "Rato", 
-                    "Macaco", "Pássaro", "Dragão", "Pássaro", "Boi", "Cavalo", "Bode", "Tigre", "Serpente", "Rato", 
+                    "Tigre", "Cão", "Tigre", "Cobra", "Boi", "Bode", "Cobra", "Javali", "Bode", "Rato", 
+                    "Macaco", "Pássaro", "Dragão", "Pássaro", "Boi", "Cavalo", "Bode", "Tigre", "Cobra", "Rato", 
                     "Macaco", "Coelho", "Javali", "Dragão", "Bode", "Rato", "Boi", "Macaco", "Pássaro", "Rato", 
                     "Bode", "Pássaro"
                 ],
@@ -85,16 +85,22 @@
                 texto: "Estilo Água: A sequência lendária e completa do Dragão d'Água com todos os 42 selos mapeados!"
             },
             clones: {
-                fotos: ["tigre.png"],
-                nomes: ["Tigre (Selo Único)"],
+                fotos: ["clones.png"],
+                nomes: ["Dedos cruzados! (Selo Único)"],
                 resultado: "clones.jpg",
                 texto: "Clones das Sombras! Use o selo de concentração para dividir sua energia vital igualmente."
             },
             transformacao: {
-                fotos: ["cachorro.png", "javali.png", "tigre.png"],
-                nomes: ["Cachorro", "Javali", "Tigre"],
+                fotos: ["tigre.png"],
+                nomes: ["Tigre"],
                 resultado: "henge.jpg",
-                texto: "Técnica de Transformação! Altere sua aparência física enganando os inimigos: Cachorro ➡️ Javali ➡️ Tigre."
+                texto: "Técnica de Transformação! Altere sua aparência física enganando os inimigos: ➡️ Tigre."
+            },
+            recarregarchakra: {
+                fotos: ["tigre.png"],
+                nomes: ["Tigre"],
+                resultado: "chakra.jpg",
+                texto: "Recarregar chakra! Altere sua aparência física enganando os inimigos: ➡️ Tigre."
             },
             edotensei: {
                 fotos: ["rato.png", "boi.png", "macaco.png", "tigre.png"],
