@@ -27,7 +27,7 @@
         <select id="menuJutsu" onchange="trocarJutsu()">
             <option value="">-- Abrir Pergaminho --</option>
             <option value="fogo">Katon: Bola de Fogo</option>
-            <option value="agua">Suiton: Dragão d'Água</option>
+            <option value="agua">Suiton: Dragão d'Água (Completo)</option>
             <option value="clones">Kage Bunshin: Clones das Sombras</option>
             <option value="transformacao">Henge no Jutsu (Transformação)</option>
             <option value="edotensei">Edo Tensei</option>
@@ -58,7 +58,7 @@
     </div>
 
     <script>
-        // CONFIGURAÇÃO DOS JUTSUS COM O KATON ATUALIZADO
+        // CONFIGURAÇÃO COMPLETA DE TODOS OS JUTSUS
         const JUTSUS = {
             fogo: {
                 fotos: ["cobra.png", "bode.png", "macaco.png", "javali.png", "cavalo.png", "tigre.png"],
@@ -67,10 +67,22 @@
                 texto: "Estilo Fogo! Concentre o chakra no peito e execute a sequência: Cobra ➡️ Bode ➡️ Macaco ➡️ Javali ➡️ Cavalo ➡️ Tigre."
             },
             agua: {
-                fotos: ["boi.png", "macaco.png", "rato.png", "javali.png", "tigre.png"],
-                nomes: ["Boi", "Macaco", "Rato", "Javali", "Tigre"],
+                fotos: [
+                    "boi.png", "macaco.png", "lebre.png", "rato.png", "javali.png", "passaro.png", "boi.png", "cavalo.png", "passaro.png", "rato.png", 
+                    "tigre.png", "cao.png", "tigre.png", "serpente.png", "boi.png", "carneiro.png", "serpente.png", "javali.png", "carneiro.png", "rato.png", 
+                    "macaco.png", "passaro.png", "dragao.png", "passaro.png", "boi.png", "cavalo.png", "carneiro.png", "tigre.png", "serpente.png", "rato.png", 
+                    "macaco.png", "lebre.png", "javali.png", "dragao.png", "carneiro.png", "rato.png", "boi.png", "macaco.png", "passaro.png", "rato.png", 
+                    "carneiro.png", "passaro.png"
+                ],
+                nomes: [
+                    "Boi", "Macaco", "Lebre", "Rato", "Javali", "Pássaro", "Boi", "Cavalo", "Pássaro", "Rato", 
+                    "Tigre", "Cão", "Tigre", "Serpente", "Boi", "Carneiro", "Serpente", "Javali", "Carneiro", "Rato", 
+                    "Macaco", "Pássaro", "Dragão", "Pássaro", "Boi", "Cavalo", "Carneiro", "Tigre", "Serpente", "Rato", 
+                    "Macaco", "Lebre", "Javali", "Dragão", "Carneiro", "Rato", "Boi", "Macaco", "Pássaro", "Rato", 
+                    "Carneiro", "Pássaro"
+                ],
                 resultado: "dragao-dagua.jpg",
-                texto: "Estilo Água! Sequência do Dragão d'Água: Boi ➡️ Macaco ➡️ Rato ➡️ Javali ➡️ Tigre."
+                texto: "Estilo Água: A sequência lendária e completa do Dragão d'Água com todos os 42 selos mapeados!"
             },
             clones: {
                 fotos: ["tigre.png"],
@@ -134,7 +146,7 @@
                 msgSelo.style.display = "none";
 
                 const nomeSelo = selecionado.nomes[etapa];
-                instrucao.innerHTML = `<strong>PASSO ${etapa + 1}:</strong> Posicione as mãos no selo <strong>${nomeSelo.toUpperCase()}</strong>!`;
+                instrucao.innerHTML = `<strong>PASSO ${etapa + 1} de ${selecionado.fotos.length}:</strong> Posicione as mãos no selo <strong>${nomeSelo.toUpperCase()}</strong>!`;
                 
                 etapa++;
 
@@ -166,5 +178,3 @@
 </body>
 </html>
 ```[cite: 1]
-
-Lembre-se apenas de verificar se você tem a imagem `cavalo.png` salva no seu repositório junto com as outras para que o novo passo do Katon apareça certinho no site!
