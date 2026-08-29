@@ -27,9 +27,10 @@
         <select id="menuJutsu" onchange="trocarJutsu()">
             <option value="">-- Abrir Pergaminho --</option>
             <option value="fogo">Katon: Bola de Fogo</option>
-            <option value="agua">Suiryudan: Dragão d'Água</option>
+            <option value="agua">Suiton: Dragão d'Água</option>
             <option value="clones">Kage Bunshin: Clones das Sombras</option>
-            <option value="rasengan">Treino de Rasengan</option>
+            <option value="transformacao">Henge no Jutsu (Transformação)</option>
+            <option value="edotensei">Kuchiyose: Edo Tensei</option>
         </select>
 
         <div class="grid">
@@ -57,7 +58,7 @@
     </div>
 
     <script>
-        // LÓGICA LOCAL USANDO AS IMAGENS DIRETO DO SEU REPOSITÓRIO
+        // CONFIGURAÇÃO DOS JUTSUS COM OS SELOS E RESULTADOS
         const JUTSUS = {
             fogo: {
                 fotos: ["javali.png", "tigre.png"],
@@ -68,20 +69,26 @@
             agua: {
                 fotos: ["boi.png", "macaco.png", "rato.png", "javali.png", "tigre.png"],
                 nomes: ["Boi", "Macaco", "Rato", "Javali", "Tigre"],
-                resultado: "selos.jpg",
-                texto: "Estilo Água! Use as posições que você tem para moldar a corrente: Boi ➡️ Macaco ➡️ Rato ➡️ Javali ➡️ Tigre."
+                resultado: "dragao-dagua.jpg",
+                texto: "Estilo Água! Sequência clássica do Dragão d'Água: Boi ➡️ Macaco ➡️ Rato ➡️ Javali ➡️ Tigre."
             },
             clones: {
                 fotos: ["tigre.png"],
-                nomes: ["Selo de Concentração de Clones"],
-                resultado: "Kage-Bunshin-no-Jutsu-(Clones-das-Sombras).jpg",
-                texto: "Clones das Sombras! Junte os dedos firmemente para dividir sua energia vital igualmente."
+                nomes: ["Tigre (Selo Único)"],
+                resultado: "clones.jpg",
+                texto: "Clones das Sombras! Use o selo de concentração para dividir sua energia vital igualmente."
             },
-            rasengan: {
-                fotos: ["macaco.png", "rato.png"],
-                nomes: ["Controle de Rotação", "Estabilização"],
-                resultado: "rasengan.jpg",
-                texto: "Controle de Chakra Avançado! Concentre e rotacione a energia na palma da mão sem parar."
+            transformacao: {
+                fotos: ["cachorro.png", "javali.png", "tigre.png"],
+                nomes: ["Cachorro", "Javali", "Tigre"],
+                resultado: "henge.jpg",
+                texto: "Técnica de Transformação! Altere sua aparência física enganando os inimigos: Cachorro ➡️ Javali ➡️ Tigre."
+            },
+            edotensei: {
+                fotos: ["rato.png", "boi.png", "macaco.png", "tigre.png"],
+                nomes: ["Rato", "Boi", "Macaco", "Tigre"],
+                resultado: "edotensei.jpg",
+                texto: "Invocação: Reencarnação Impura! Os selos proibidos de Kabuto e Orochimaru: Rato ➡️ Boi ➡️ Macaco ➡️ Tigre (e bater com as mãos no chão)."
             }
         };
 
@@ -158,3 +165,13 @@
     </script>
 </body>
 </html>
+```[cite: 1]
+
+### Dicas importantes para o seu GitHub Pages não dar erro de imagem quebrada:
+1. Certifique-se de que os arquivos de imagem dos selos (`javali.png`, `tigre.png`, `boi.png`, `macaco.png`, `rato.png`, `cachorro.png`) estão salvos exatamente com esses nomes em minúsculo na raiz do repositório.
+2. Certifique-se de enviar também as imagens dos resultados com nomes limpos (sem espaços ou acentos):
+   - `bola-de-fogo.jpg`
+   - `dragao-dagua.jpg`
+   - `clones.jpg`
+   - `henge.jpg`
+   - `edotensei.jpg`
